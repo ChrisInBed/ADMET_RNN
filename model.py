@@ -68,13 +68,15 @@ class PlusSolNet(nn.Module):
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(PlusSolNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
-        self.net = nn.Sequential(nn.Linear(feature_size + 200, hidden_size),
+        self.net = nn.Sequential(nn.Linear(feature_size + 196, hidden_size),
                                  nn.Tanh(),
                                  nn.Linear(hidden_size, 1))
-        self.descriptors = [desc[0] for desc in Descriptors._descList]
+        self.descriptors = [desc[0] for desc in Descriptors._descList if not (
+                desc[0] in ['MaxPartialCharge', 'MinPartialCharge', 'MaxAbsPartialCharge', 'MinAbsPartialCharge'])]
         self.desc_calc = MoleculeDescriptors.MolecularDescriptorCalculator(self.descriptors)
 
-    def forward(self, graphs, plus_features):
+    def forward(self, data_bunch):
+        graphs, plus_features = data_bunch
         features = self.feature_net(graphs)
         features = torch.cat([features, plus_features], dim=1)
         return self.net(features).view(-1, )
@@ -83,7 +85,7 @@ class PlusSolNet(nn.Module):
         graphs = [Graph(smiles) for smiles in smiles_es]
         plus_features = [list(self.desc_calc.CalcDescriptors(Chem.MolFromSmiles(smiles))) for smiles in smiles_es]
         plus_features = torch.Tensor(plus_features).type(torch.float32)
-        return self.forward(graphs, plus_features)
+        return self.forward((graphs, plus_features))
 
 
 class HIVNet(nn.Module):
@@ -108,14 +110,16 @@ class PlusHIVNet(nn.Module):
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(PlusHIVNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
-        self.net = nn.Sequential(nn.Linear(feature_size + 200, hidden_size),
+        self.net = nn.Sequential(nn.Linear(feature_size + 196, hidden_size),
                                  nn.Tanh(),
                                  nn.Linear(hidden_size, 2),
                                  nn.LogSoftmax(1))
-        self.descriptors = [desc[0] for desc in Descriptors._descList]
+        self.descriptors = [desc[0] for desc in Descriptors._descList if not (
+                desc[0] in ['MaxPartialCharge', 'MinPartialCharge', 'MaxAbsPartialCharge', 'MinAbsPartialCharge'])]
         self.desc_calc = MoleculeDescriptors.MolecularDescriptorCalculator(self.descriptors)
 
-    def forward(self, graphs, plus_features):
+    def forward(self, data_bunch):
+        graphs, plus_features = data_bunch
         features = self.feature_net(graphs)
         features = torch.cat([features, plus_features], dim=1)
         return self.net(features)
@@ -124,7 +128,7 @@ class PlusHIVNet(nn.Module):
         graphs = [Graph(smiles) for smiles in smiles_es]
         plus_features = [list(self.desc_calc.CalcDescriptors(Chem.MolFromSmiles(smiles))) for smiles in smiles_es]
         plus_features = torch.Tensor(plus_features).type(torch.float32)
-        return torch.exp(self.forward(graphs, plus_features))
+        return torch.exp(self.forward((graphs, plus_features)))
 
 
 def test():

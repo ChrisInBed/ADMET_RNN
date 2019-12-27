@@ -8,6 +8,13 @@ from sklearn.model_selection import KFold
 
 
 class SolData(object):
+    """
+    Iterable.
+    output in each iteration: (batch_graphs(np.ndarray, size=(batch_size, )),
+                               batch_solubility(torch.Tensor, size=(batch_size, )))
+    provide cross validation method: get_cv_sets(folds)
+                                     return Iterator: output in each iteration: (data Iterator of one fold, validation data, validation target)
+    """
     def __init__(self, filename, batch_size=64):
         self.batch_size = batch_size
         raw_data = pd.read_csv(filename)
@@ -75,8 +82,8 @@ class PlusSolData(object):
         while True:
             if pointer >= data.shape[0]:
                 break
-            yield data[pointer: pointer + batch_size], torch.from_numpy(feature[pointer:pointer + batch_size]).type(
-                torch.float32), torch.from_numpy(target[pointer: pointer + batch_size]).type(torch.float32)
+            yield (data[pointer: pointer + batch_size], torch.from_numpy(feature[pointer:pointer + batch_size]).type(
+                torch.float32)), torch.from_numpy(target[pointer: pointer + batch_size]).type(torch.float32)
             pointer += batch_size
 
     def get_cv_sets(self, folds=5):
@@ -86,8 +93,9 @@ class PlusSolData(object):
             sol_train, sol_val = self.solubility[train_index], self.solubility[test_index]
             feature_train, feature_val = self.features[train_index], self.features[test_index]
             yield PlusSolData.train_iterator(graph_train, feature_train, sol_train,
-                                             self.batch_size), graph_val, torch.from_numpy(feature_val).type(
-                torch.float32), torch.from_numpy(sol_val).type(torch.float32)
+                                             self.batch_size), (
+                      graph_val, torch.from_numpy(feature_val).type(torch.float32)), torch.from_numpy(sol_val).type(
+                torch.float32)
 
     @classmethod
     def make_variables(cls, graphs):
@@ -112,7 +120,7 @@ class PlusSolData(object):
         batch_features = torch.from_numpy(self.features[sample_index]).type(torch.float32)
         batch_solubility = torch.from_numpy(self.solubility[sample_index]).type(torch.float32)
         self._pointer += self.batch_size
-        return batch_graphs, batch_features, batch_solubility
+        return (batch_graphs, batch_features), batch_solubility
 
 
 class HIVData(object):
@@ -130,8 +138,9 @@ class HIVData(object):
         while True:
             if pointer >= data.shape[0]:
                 break
-            yield data[pointer: pointer + batch_size], torch.from_numpy(target[pointer: pointer + batch_size]).type(
-                torch.float32)
+            batch_data = data[pointer: pointer + batch_size]
+            batch_targets = torch.from_numpy(target[pointer: pointer + batch_size]).type(torch.long)
+            yield batch_data, batch_targets
             pointer += batch_size
 
     def get_cv_sets(self, folds=5):
@@ -140,7 +149,7 @@ class HIVData(object):
             graph_train, graph_val = self.graphs[train_index], self.graphs[test_index]
             ac_train, ac_val = self.activity[train_index], self.activity[test_index]
             yield HIVData.train_iterator(graph_train, ac_train, self.batch_size), graph_val, torch.from_numpy(
-                ac_val).type(torch.float32)
+                ac_val).type(torch.long)
 
     @classmethod
     def make_variables(cls, graphs):
@@ -162,7 +171,7 @@ class HIVData(object):
             raise StopIteration
         sample_index = np.random.randint(0, self.size, size=(self.batch_size,))
         batch_graphs = self.graphs[sample_index]
-        batch_activity = torch.from_numpy(self.activity[sample_index]).type(torch.float32)
+        batch_activity = torch.from_numpy(self.activity[sample_index]).type(torch.long)
         self._pointer += self.batch_size
         return batch_graphs, batch_activity
 
@@ -183,8 +192,10 @@ class PlusHIVData(object):
         while True:
             if pointer >= data.shape[0]:
                 break
-            yield data[pointer: pointer + batch_size], torch.from_numpy(feature[pointer:pointer + batch_size]).type(
-                torch.float32), torch.from_numpy(target[pointer: pointer + batch_size]).type(torch.float32)
+            batch_data = data[pointer: pointer + batch_size]
+            batch_features = torch.from_numpy(feature[pointer:pointer + batch_size]).type(torch.float32)
+            batch_targets = torch.from_numpy(target[pointer: pointer + batch_size]).type(torch.long)
+            yield (batch_data, batch_features), batch_targets
             pointer += batch_size
 
     def get_cv_sets(self, folds=5):
@@ -194,8 +205,9 @@ class PlusHIVData(object):
             ac_train, ac_val = self.activity[train_index], self.activity[test_index]
             feature_train, feature_val = self.features[train_index], self.features[test_index]
             yield PlusHIVData.train_iterator(graph_train, feature_train, ac_train,
-                                             self.batch_size), graph_val, torch.from_numpy(feature_val).type(
-                torch.float32), torch.from_numpy(ac_val).type(torch.float32)
+                                             self.batch_size), (
+                  graph_val, torch.from_numpy(feature_val).type(torch.float32)), torch.from_numpy(ac_val).type(
+                torch.long)
 
     @classmethod
     def make_variables(cls, graphs):
@@ -218,9 +230,9 @@ class PlusHIVData(object):
         sample_index = np.random.randint(0, self.size, size=(self.batch_size,))
         batch_graphs = self.graphs[sample_index]
         batch_features = torch.from_numpy(self.features[sample_index]).type(torch.float32)
-        batch_activity = torch.from_numpy(self.activity[sample_index]).type(torch.float32)
+        batch_activity = torch.from_numpy(self.activity[sample_index]).type(torch.long)
         self._pointer += self.batch_size
-        return batch_graphs, batch_features, batch_activity
+        return (batch_graphs, batch_features), batch_activity
 
 
 def test():
@@ -229,9 +241,9 @@ def test():
     # print(next(soldata))
     soldata_cv = soldata.get_cv_sets(5)
     train_cv, test_data, test_target = next(soldata_cv)
-    print(test_data)
-    print(test_target)
-    print(next(train_cv))
+    print(test_data.shape)
+    print(test_target.shape)
+    print(next(train_cv)[0].shape)
 
 
 def test1():
@@ -239,8 +251,7 @@ def test1():
     # iter(soldata)
     # print(next(soldata))
     soldata_cv = soldata.get_cv_sets(5)
-    train_cv, test_data, test_feature, test_target = next(soldata_cv)
-    print(test_data)
-    print(test_target)
-    print(test_feature)
-    print(next(train_cv))
+    train_cv, test_data, test_target = next(soldata_cv)
+    print(test_data[1].shape)
+    print(test_target.shape)
+    print(next(train_cv)[0][1].shape)
