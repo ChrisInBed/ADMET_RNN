@@ -1,11 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+Model training and k-fold cross validation
+
+train: basic train function of model, on a defined training set
+ModelCV: Cross Validation wrapper of models in model.py
+-----------------------------------------------------------------------------------------------------------
+Author: Chris
+Department: Machine Learning Course directed by Prof.Liu, Peking University
+"""
 import torch
 from torch import nn
 from torch.autograd import Variable
 
 from model import SolNet, PlusSolNet, HIVNet, PlusHIVNet
 from load_data import SolData, PlusSolData, HIVData, PlusHIVData
-
-import os
 
 
 def make_variables(graphs):
@@ -20,6 +28,16 @@ def make_variables(graphs):
 
 
 def train(model, data_iterator, optimizer, loss, show_every=5, epochs=10, plus=False):
+    """
+    basic train function of model, on a defined training set
+    :param model: model.XXXNet
+    :param data_iterator: load_data.XXXData object, or data_iterators acquired by load_data.XXXData.get_cv_sets()
+    :param optimizer: optimizer in torch.optim
+    :param loss: Function. loss function that accepts predicted values and targets, returns a scalar value
+    :param show_every: int, print loss score after every show_every batches
+    :param epochs: int
+    :param plus: bool, whether the model is PlusXXXNet or not
+    """
     count = 0
     for epoch in range(epochs):
         for data, target in data_iterator:
@@ -49,6 +67,39 @@ def train(model, data_iterator, optimizer, loss, show_every=5, epochs=10, plus=F
 
 
 class ModelCV(object):
+    """
+    Cross Validation wrapper of models in model.py
+    :param
+        Model: model in model.py
+        folds: int, folds in k-fold cross validation
+        plus: bool, whether the model is PlusXXXNet or not
+        *args, **kwargs: arguments that the model takes
+
+    :methods
+        train(data_loader, Optimizer, optim_dict, loss, show_every=5, epochs=10, early_stopping=False, tol=0.5)
+            :param data_loader: load_data.XXXData
+            :param Optimizer: optimizer in torch.optim
+            :param optim_dict: the kwargs dict that the optimizer takes
+            :param loss: Function. loss function that accepts predicted values and targets, returns a scalar value
+            :param show_every: int, print loss score after every show_every batches
+            :param epochs: int
+            :param early_stopping: bool, if True, the train process will stop when the loss score is less tha tol
+            :param tol: float
+
+        predict(smiles_es)
+            :param smiles_es: iterable of smiles expressions
+            :return: torch.Tensor, the average output of the models inside
+
+    Example:
+        model_cv = ModelCV(PlusSolNet, folds=5, plus=True, inner_hidden_size=150, feature_size=50, hidden_size=100)
+        data_loader = PlusSolData('datasets/plus_esol_train.txt', batch_size=64)
+        Optimizer = torch.optim.Adam
+        optim_dict = {'lr': 1e-3}
+        loss = nn.MSELoss()
+        model_cv.train(data_loader, Optimizer, optim_dict, loss, early_stopping=True, tol=0.5)
+        model_cv.save_model('plus_solnet_model')
+        model_cv.predict(["CCCO", "c1ccc(N)cc1C=O"])
+    """
     def __init__(self, Model, folds=5, plus=False, *args, **kwargs):
         self.models = [Model(*args, **kwargs) for _ in range(folds)]
         self.folds = folds

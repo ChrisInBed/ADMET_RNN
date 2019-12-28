@@ -1,3 +1,19 @@
+# -*- coding: utf-8 -*-
+"""
+Models for predicting solubility and anti-HIV activity of molecules.
+FeatureRNN: Extract features based on the recursive structure of molecules
+
+4 working models:
+    SolNet: predict molecules' water solubility based on the features extracted by FeatureRNN
+    PlusSolNet: predict molecules' water solubility based on the features extracted by FeatureRNN, and 196 extra global
+                features calculated by rdkit
+    HIVNet: predict molecule' anti-HIV activity based on the features extracted by FeatureRNN
+    PlusHIVNet: predict molecules' anti-HIV activity based on the features extracted by FeatureRNN, and 196 extra global
+                features calculated by rdkit
+-----------------------------------------------------------------------------------------------------------
+Author: Chris
+Department: Machine Learning Course directed by Prof.Liu, Peking University
+"""
 import torch
 from torch import nn
 
@@ -9,6 +25,17 @@ from rdkit.ML.Descriptors import MoleculeDescriptors
 
 
 class FeatureRNN(nn.Module):
+    """
+    Extract features based on the recursive structure of molecules
+    Input: size = (K,), Iterable objects of base.Graph
+    Output: size = (K, output_size), torch.Tensor
+
+    :argument
+    atom_msg: int, length of Node.msg
+    bond_msg: int, length of tensors in Node.bonds
+    hidden_size: int, number of neures in recursive net
+    output_size: int, number of output features
+    """
     def __init__(self, atom_msg=125, bond_msg=12, hidden_size=125, output_size=40):
         super(FeatureRNN, self).__init__()
         self.bond_msg = bond_msg
@@ -48,6 +75,24 @@ class FeatureRNN(nn.Module):
 
 
 class SolNet(nn.Module):
+    """
+    predict molecules' water solubility based on the features extracted by FeatureRNN
+    Input: size = (K,), Iterable objects of base.Graph
+    Output: size = (K,), torch.Tensor
+
+    :argument
+    atom_msg: int, length of Node.msg
+    bond_msg: int, length of tensors in Node.bonds
+    hidden_size: int, number of neures in recursive net
+    output_size: int, number of output features
+
+    :methods
+    predict(smile_es):
+        :param
+            smile_es: iterable of smiles expressions
+        :return
+            torch.Tensor, size = (K,)
+    """
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(SolNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
@@ -65,6 +110,25 @@ class SolNet(nn.Module):
 
 
 class PlusSolNet(nn.Module):
+    """
+    predict molecules' water solubility based on the features extracted by FeatureRNN, and 196 extra global
+    features calculated by rdkit
+    Input: size = (K,), Iterable objects of base.Graph
+    Output: size = (K,), torch.Tensor
+
+    :argument
+    atom_msg: int, length of Node.msg
+    bond_msg: int, length of tensors in Node.bonds
+    hidden_size: int, number of neures in recursive net
+    output_size: int, number of output features
+
+    :methods
+    predict(smile_es):
+        :param
+            smile_es: iterable of smiles expressions
+        :return
+            torch.Tensor, size = (K,)
+    """
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(PlusSolNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
@@ -89,6 +153,25 @@ class PlusSolNet(nn.Module):
 
 
 class HIVNet(nn.Module):
+    """
+    predict molecule' anti-HIV activity based on the features extracted by FeatureRNN
+    Input: size = (K,), Iterable objects of base.Graph
+    Output: size = (K, 2), torch.Tensor, indicate the probability that the molecule has anti-HIV activity
+            For example: [0.2, 0.8] means the molecule has anti-HIV activity at the probability of 0.8
+
+    :argument
+    atom_msg: int, length of Node.msg
+    bond_msg: int, length of tensors in Node.bonds
+    hidden_size: int, number of neures in recursive net
+    output_size: int, number of output features
+
+    :methods
+    predict(smile_es):
+        :param
+            smile_es: iterable of smiles expressions
+        :return
+            torch.Tensor, size = (K, 2)
+    """
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(HIVNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
@@ -107,6 +190,26 @@ class HIVNet(nn.Module):
 
 
 class PlusHIVNet(nn.Module):
+    """
+    predict molecules' anti-HIV activity based on the features extracted by FeatureRNN, and 196 extra global
+    features calculated by rdkit
+    Input: size = (K,), Iterable objects of base.Graph
+    Output: size = (K, 2), torch.Tensor, indicate the probability that the molecule has anti-HIV activity
+            For example: [0.2, 0.8] means the molecule has anti-HIV activity at the probability of 0.8
+
+    :argument
+    atom_msg: int, length of Node.msg
+    bond_msg: int, length of tensors in Node.bonds
+    hidden_size: int, number of neures in recursive net
+    output_size: int, number of output features
+
+    :methods
+    predict(smile_es):
+        :param
+            smile_es: iterable of smiles expressions
+        :return
+            torch.Tensor, size = (K, 2)
+    """
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(PlusHIVNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)

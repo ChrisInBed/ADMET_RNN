@@ -1,3 +1,15 @@
+# -*- coding: utf-8 -*-
+"""
+Data Loaders
+All data loaders are designed iterable in two ways:
+XXXData: generate (data, target) batch in each iteration
+XXXData.get_cv_sets(fold): generate (data_iterator, validation_data, validation_target) in each iteration. data_iterator
+                           is a iterator similar to the __iter__ magic defined in XXXData.
+                           It's for k-fold validation applied to models.
+-----------------------------------------------------------------------------------------------------------
+Author: Chris
+Department: Machine Learning Course directed by Prof.Liu, Peking University
+"""
 import numpy as np, pandas as pd
 import torch
 from torch.autograd import Variable
@@ -13,7 +25,8 @@ class SolData(object):
     output in each iteration: (batch_graphs(np.ndarray, size=(batch_size, )),
                                batch_solubility(torch.Tensor, size=(batch_size, )))
     provide cross validation method: get_cv_sets(folds)
-                                     return Iterator: output in each iteration: (data Iterator of one fold, validation data, validation target)
+                                     return Iterator: output in each iteration: (data Iterator of one fold,
+                                     validation data, validation target)
     """
     def __init__(self, filename, batch_size=64):
         self.batch_size = batch_size
@@ -44,7 +57,7 @@ class SolData(object):
     @classmethod
     def make_variables(cls, graphs):
         """
-        wrap every serial value (atom and bonds) in Variable, for back_propagation in training process.
+        wrap every serial value (atom and bonds) as torch.autograd.Variable, for back_propagation in training process.
         :param graphs: Iterable of Graph
         """
         for graph in graphs:

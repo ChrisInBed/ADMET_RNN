@@ -19,9 +19,9 @@ smiles expressions that can't be recognized by rdkit were droped.(A small popula
 all models are inherited from nn.Module
 - FeatureRNN: feature learning to get feature vector
 - SolNet: NN to predict solubility
-- PlusSolNet: 196 features get by FeatureRNN are concat with global features calculated by rdkit
+- PlusSolNet: 196 global features calculated by rdkit are concat with the recursive features acquired by FeatureRNN
 - HIVNet: NN to predict anti-hiv activity
-- PlusHIVNet: 196 features get by FeatureRNN are concat with global features calculated by rdkit
+- PlusHIVNet: 196 global features calculated by rdkit are concat with the recursive features acquired by FeatureRNN
 ### load_data.py
 present iterable data loader with defined batch_size, to feed a model.
 A data loader for each explicit Model in model.py
@@ -42,7 +42,7 @@ A data loader for each explicit Model in model.py
 
 ## Report
 - 背景，请参考文献工作
-- 模型原理，参考新版的文档
+- 模型原理，参考报告内容，papers/report_191213.docx
 - 数据集介绍，数据集预处理与符号说明，以及模型参数
 - 模型评估，并与参考文献成果对比
 - 改进建议
