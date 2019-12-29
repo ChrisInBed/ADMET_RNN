@@ -36,7 +36,6 @@ def train(model, data_iterator, optimizer, loss, show_every=5, epochs=10):
     :param loss: Function. loss function that accepts predicted values and targets, returns a scalar value
     :param show_every: int, print loss score after every show_every batches
     :param epochs: int
-    :param plus: bool, whether the model is PlusXXXNet or not
     """
     count = 0
     for epoch in range(epochs):
@@ -91,7 +90,7 @@ class ModelCV(object):
             :return: torch.Tensor, the average output of the models inside
 
     Example:
-        model_cv = ModelCV(PlusSolNet, folds=5, plus=True, inner_hidden_size=150, feature_size=50, hidden_size=100)
+        model_cv = ModelCV(PlusSolNet, folds=5, inner_hidden_size=150, feature_size=50, hidden_size=100)
         data_loader = PlusSolData('datasets/plus_esol_train.txt', batch_size=64)
         Optimizer = torch.optim.Adam
         optim_dict = {'lr': 1e-3}
@@ -139,7 +138,7 @@ class ModelCV(object):
 
 
 def train_plus_solnet():
-    model_cv = ModelCV(PlusSolNet, folds=5, plus=True)
+    model_cv = ModelCV(PlusSolNet, folds=5)
     data_loader = PlusSolData('datasets/plus_esol_train.txt', batch_size=64)
     Optimizer = torch.optim.Adam
     optim_dict = {'lr': 1e-3}
@@ -149,7 +148,7 @@ def train_plus_solnet():
 
 
 def train_plus_hivnet():
-    model_cv = ModelCV(PlusHIVNet, folds=5, plus=True)
+    model_cv = ModelCV(PlusHIVNet, folds=5)
     data_loader = PlusHIVData('datasets/plus_hiv_train.txt', batch_size=64)
     Optimizer = torch.optim.Adam
     optim_dict = {'lr': 1e-3}
@@ -159,7 +158,7 @@ def train_plus_hivnet():
 
 
 # def test():
-#     model_cv = ModelCV(PlusHIVNet, folds=5, plus=True)
+#     model_cv = ModelCV(PlusHIVNet, folds=5)
 #     print(model_cv.predict(['CCO', 'c1cc(O)ccc1C=O']))
 
 
