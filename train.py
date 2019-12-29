@@ -27,7 +27,7 @@ def make_variables(graphs):
             node.bonds = [Variable(bond) for bond in node.bonds]
 
 
-def train(model, data_iterator, optimizer, loss, show_every=5, epochs=10, plus=False):
+def train(model, data_iterator, optimizer, loss, show_every=5, epochs=10):
     """
     basic train function of model, on a defined training set
     :param model: model.XXXNet
@@ -42,7 +42,7 @@ def train(model, data_iterator, optimizer, loss, show_every=5, epochs=10, plus=F
     for epoch in range(epochs):
         for data, target in data_iterator:
             target = Variable(target)
-            if plus:
+            if model.plus:
                 graphs, plus_features = data
                 # for single_feature in plus_features.view(-1,):
                 #     if torch.isnan(single_feature):
@@ -100,10 +100,10 @@ class ModelCV(object):
         model_cv.save_model('plus_solnet_model')
         model_cv.predict(["CCCO", "c1ccc(N)cc1C=O"])
     """
-    def __init__(self, Model, folds=5, plus=False, *args, **kwargs):
+
+    def __init__(self, Model, folds=5, *args, **kwargs):
         self.models = [Model(*args, **kwargs) for _ in range(folds)]
         self.folds = folds
-        self.plus = plus
 
     def train(self, data_loader, Optimizer, optim_dict, loss, show_every=5, epochs=10, early_stopping=False, tol=0.5):
         optimizers = [Optimizer(params=model.parameters(), **optim_dict) for model in self.models]
@@ -111,7 +111,7 @@ class ModelCV(object):
             scores = []
             for (data_iterator, data_val, target_val), model, optimizer in zip(data_loader.get_cv_sets(self.folds),
                                                                                self.models, optimizers):
-                train(model, data_iterator, optimizer, loss, show_every, epochs=1, plus=self.plus)
+                train(model, data_iterator, optimizer, loss, show_every, epochs=1)
                 score_val = loss(model(data_val), target_val)
                 scores.append(score_val)
             scores = torch.Tensor(scores).type(torch.float32)

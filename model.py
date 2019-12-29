@@ -36,6 +36,7 @@ class FeatureRNN(nn.Module):
     hidden_size: int, number of neures in recursive net
     output_size: int, number of output features
     """
+
     def __init__(self, atom_msg=125, bond_msg=12, hidden_size=125, output_size=40):
         super(FeatureRNN, self).__init__()
         self.bond_msg = bond_msg
@@ -93,6 +94,8 @@ class SolNet(nn.Module):
         :return
             torch.Tensor, size = (K,)
     """
+    plus = False
+
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(SolNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
@@ -129,6 +132,8 @@ class PlusSolNet(nn.Module):
         :return
             torch.Tensor, size = (K,)
     """
+    plus = True
+
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(PlusSolNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
@@ -172,6 +177,8 @@ class HIVNet(nn.Module):
         :return
             torch.Tensor, size = (K, 2)
     """
+    plus = False
+
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(HIVNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
@@ -187,6 +194,9 @@ class HIVNet(nn.Module):
     def predict(self, smiles_es):
         graphs = [Graph(smiles) for smiles in smiles_es]
         return torch.exp(self.forward(graphs))
+
+    def predict_class(self, smile_es):
+        return self.predict(smile_es).argmax(dim=1)
 
 
 class PlusHIVNet(nn.Module):
@@ -210,6 +220,8 @@ class PlusHIVNet(nn.Module):
         :return
             torch.Tensor, size = (K, 2)
     """
+    plus = True
+
     def __init__(self, atom_msg=125, bond_msg=12, inner_hidden_size=125, feature_size=40, hidden_size=100):
         super(PlusHIVNet, self).__init__()
         self.feature_net = FeatureRNN(atom_msg, bond_msg, inner_hidden_size, feature_size)
@@ -232,6 +244,9 @@ class PlusHIVNet(nn.Module):
         plus_features = [list(self.desc_calc.CalcDescriptors(Chem.MolFromSmiles(smiles))) for smiles in smiles_es]
         plus_features = torch.Tensor(plus_features).type(torch.float32)
         return torch.exp(self.forward((graphs, plus_features)))
+
+    def predict_class(self, smile_es):
+        return self.predict(smile_es).argmax(dim=1)
 
 
 def test():
