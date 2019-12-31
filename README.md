@@ -29,6 +29,8 @@ A data loader for each explicit Model in model.py
 - train: base train function, no need to explain
 - ModelCV: Cross-Validation wrapper of model in model.py. ModelCV.train method will preform k-fold
   cross validation automatically
+### evaluate.py
+Provide an example to evaluate trained models on test data set
 
 ## Evaluation
 - SolNet和PlusSolNet完成回归任务，使用RMSE评估就可以。
