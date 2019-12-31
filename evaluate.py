@@ -14,7 +14,7 @@ import matplotlib.pyplot as plt
 
 
 def eval_solnet():
-    model = ModelCV(SolNet, folds=5, inner_hidden_size=125, feature_size=40, hidden_size=100)  # Initialize a model
+    model = ModelCV(SolNet, folds=5, inner_hidden_size=150, feature_size=50, hidden_size=100)  # Initialize a model
     model.load_model('models/SolNet/solnet_model')  # load from trained model file
     data_test = pd.read_csv('datasets/esol_test.txt')  # load test dataset
     smiles_test = data_test['smiles'].values
@@ -29,9 +29,15 @@ def eval_solnet():
     r2_result = r2_score(target_test, target_pred)
     ax.text(0.8 * ax.get_xlim()[0] + 0.2 * ax.get_xlim()[1], 0.2 * ax.get_ylim()[0] + 0.8 * ax.get_ylim()[1],
             fr'$\R^{{2}}\ =\ {r2_result:.3f}$')
+    ax.set_xlabel(r'Experiment Solubility' + r'$\log{S/M}$')
+    ax.set_ylabel(r'Predicted Solubility' + r'$\log{S/M}$')
     fig.show()
     # fig.savefig('graph/XXX.svg')
 
     rmse_score = mean_squared_error(target_test, target_pred) ** 0.5
 
     print(f'RMSE = {rmse_score:.3f}')
+
+
+if __name__ == '__main__':
+    eval_solnet()

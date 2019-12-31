@@ -109,7 +109,7 @@ class SolNet(nn.Module):
 
     def predict(self, smiles_es):
         graphs = [Graph(smiles) for smiles in smiles_es]
-        return self.forward(graphs)
+        return self(graphs).detach()
 
 
 class PlusSolNet(nn.Module):
@@ -154,7 +154,7 @@ class PlusSolNet(nn.Module):
         graphs = [Graph(smiles) for smiles in smiles_es]
         plus_features = [list(self.desc_calc.CalcDescriptors(Chem.MolFromSmiles(smiles))) for smiles in smiles_es]
         plus_features = torch.Tensor(plus_features).type(torch.float32)
-        return self.forward((graphs, plus_features))
+        return self((graphs, plus_features)).detach()
 
 
 class HIVNet(nn.Module):
@@ -193,7 +193,7 @@ class HIVNet(nn.Module):
 
     def predict(self, smiles_es):
         graphs = [Graph(smiles) for smiles in smiles_es]
-        return torch.exp(self.forward(graphs))
+        return torch.exp(self(graphs)).detach()
 
     def predict_class(self, smile_es):
         return self.predict(smile_es).argmax(dim=1)
@@ -243,7 +243,7 @@ class PlusHIVNet(nn.Module):
         graphs = [Graph(smiles) for smiles in smiles_es]
         plus_features = [list(self.desc_calc.CalcDescriptors(Chem.MolFromSmiles(smiles))) for smiles in smiles_es]
         plus_features = torch.Tensor(plus_features).type(torch.float32)
-        return torch.exp(self.forward((graphs, plus_features)))
+        return torch.exp(self((graphs, plus_features)).detach())
 
     def predict_class(self, smile_es):
         return self.predict(smile_es).argmax(dim=1)
