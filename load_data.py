@@ -47,7 +47,7 @@ class SolData(object):
             pointer += batch_size
 
     def get_cv_sets(self, folds=5):
-        folder = KFold(n_splits=folds, shuffle=True)
+        folder = KFold(n_splits=folds, shuffle=True, random_state=1234)
         for train_index, test_index in folder.split(self.graphs):
             graph_train, graph_val = self.graphs[train_index], self.graphs[test_index]
             sol_train, sol_val = self.solubility[train_index], self.solubility[test_index]
