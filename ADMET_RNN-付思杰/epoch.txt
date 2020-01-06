@@ -1,0 +1,908 @@
+C:\ProgramData\Anaconda3\python.exe C:/Users/123/Desktop/ADMET_RNN-work/epoch.py
+Current epoch: 0.
+Run another 10 epoch?[y/n]
+y
+    count: 0---loss: 15.872
+    count: 5---loss: 5.691
+    count: 0---loss: 14.364
+    count: 5---loss: 3.383
+    count: 0---loss: 19.086
+    count: 5---loss: 4.612
+    count: 0---loss: 16.891
+    count: 5---loss: 3.776
+    count: 0---loss: 18.508
+    count: 5---loss: 5.040
+Validation Score over Epoch 0: 4.405
+    count: 0---loss: 6.110
+    count: 5---loss: 2.643
+    count: 0---loss: 3.252
+    count: 5---loss: 2.558
+    count: 0---loss: 5.251
+    count: 5---loss: 2.870
+    count: 0---loss: 3.622
+    count: 5---loss: 3.157
+    count: 0---loss: 5.092
+    count: 5---loss: 3.047
+Validation Score over Epoch 1: 3.322
+    count: 0---loss: 2.844
+    count: 5---loss: 2.924
+    count: 0---loss: 2.692
+    count: 5---loss: 2.456
+    count: 0---loss: 2.727
+    count: 5---loss: 3.133
+    count: 0---loss: 2.676
+    count: 5---loss: 3.130
+    count: 0---loss: 3.185
+    count: 5---loss: 3.353
+Validation Score over Epoch 2: 3.344
+    count: 0---loss: 2.904
+    count: 5---loss: 2.570
+    count: 0---loss: 2.639
+    count: 5---loss: 2.364
+    count: 0---loss: 2.806
+    count: 5---loss: 2.808
+    count: 0---loss: 2.596
+    count: 5---loss: 2.885
+    count: 0---loss: 3.272
+    count: 5---loss: 3.031
+Validation Score over Epoch 3: 3.119
+    count: 0---loss: 2.861
+    count: 5---loss: 2.515
+    count: 0---loss: 2.625
+    count: 5---loss: 2.142
+    count: 0---loss: 2.799
+    count: 5---loss: 2.640
+    count: 0---loss: 2.722
+    count: 5---loss: 2.765
+    count: 0---loss: 3.168
+    count: 5---loss: 2.762
+Validation Score over Epoch 4: 2.867
+    count: 0---loss: 2.620
+    count: 5---loss: 2.473
+    count: 0---loss: 2.243
+    count: 5---loss: 2.077
+    count: 0---loss: 2.414
+    count: 5---loss: 2.459
+    count: 0---loss: 2.415
+    count: 5---loss: 2.671
+    count: 0---loss: 2.754
+    count: 5---loss: 2.625
+Validation Score over Epoch 5: 2.722
+    count: 0---loss: 2.348
+    count: 5---loss: 2.345
+    count: 0---loss: 2.159
+    count: 5---loss: 1.970
+    count: 0---loss: 2.366
+    count: 5---loss: 2.337
+    count: 0---loss: 2.361
+    count: 5---loss: 2.564
+    count: 0---loss: 2.579
+    count: 5---loss: 2.548
+Validation Score over Epoch 6: 2.577
+    count: 0---loss: 2.247
+    count: 5---loss: 2.162
+    count: 0---loss: 2.029
+    count: 5---loss: 1.826
+    count: 0---loss: 2.158
+    count: 5---loss: 2.154
+    count: 0---loss: 2.258
+    count: 5---loss: 2.506
+    count: 0---loss: 2.437
+    count: 5---loss: 2.469
+Validation Score over Epoch 7: 2.393
+    count: 0---loss: 1.958
+    count: 5---loss: 1.816
+    count: 0---loss: 1.821
+    count: 5---loss: 1.658
+    count: 0---loss: 2.047
+    count: 5---loss: 1.973
+    count: 0---loss: 2.074
+    count: 5---loss: 2.385
+    count: 0---loss: 2.273
+    count: 5---loss: 2.320
+Validation Score over Epoch 8: 2.186
+    count: 0---loss: 1.728
+    count: 5---loss: 1.518
+    count: 0---loss: 1.675
+    count: 5---loss: 1.474
+    count: 0---loss: 1.840
+    count: 5---loss: 1.641
+    count: 0---loss: 1.940
+    count: 5---loss: 2.215
+    count: 0---loss: 2.114
+    count: 5---loss: 2.103
+Validation Score over Epoch 9: 1.947
+process ended
+Current epoch: 10.
+Run another 10 epoch?[y/n]
+    count: 0---loss: 1.490
+    count: 5---loss: 1.725
+    count: 0---loss: 1.556
+    count: 5---loss: 1.727
+    count: 0---loss: 1.654
+    count: 5---loss: 1.724
+    count: 0---loss: 1.719
+    count: 5---loss: 2.121
+    count: 0---loss: 1.896
+    count: 5---loss: 1.870
+Validation Score over Epoch 0: 1.870
+    count: 0---loss: 1.430
+    count: 5---loss: 1.618
+    count: 0---loss: 1.536
+    count: 5---loss: 1.529
+    count: 0---loss: 1.603
+    count: 5---loss: 1.685
+    count: 0---loss: 1.652
+    count: 5---loss: 1.842
+    count: 0---loss: 1.753
+    count: 5---loss: 1.570
+Validation Score over Epoch 1: 1.736
+    count: 0---loss: 1.323
+    count: 5---loss: 1.265
+    count: 0---loss: 1.319
+    count: 5---loss: 1.260
+    count: 0---loss: 1.469
+    count: 5---loss: 1.282
+    count: 0---loss: 1.432
+    count: 5---loss: 1.475
+    count: 0---loss: 1.629
+    count: 5---loss: 1.429
+Validation Score over Epoch 2: 1.559
+    count: 0---loss: 1.240
+    count: 5---loss: 1.106
+    count: 0---loss: 1.260
+    count: 5---loss: 1.121
+    count: 0---loss: 1.325
+    count: 5---loss: 1.251
+    count: 0---loss: 1.219
+    count: 5---loss: 1.284
+    count: 0---loss: 1.261
+    count: 5---loss: 1.265
+Validation Score over Epoch 3: 1.455
+    count: 0---loss: 1.144
+    count: 5---loss: 0.998
+    count: 0---loss: 1.330
+    count: 5---loss: 1.059
+    count: 0---loss: 1.410
+    count: 5---loss: 1.104
+    count: 0---loss: 1.090
+    count: 5---loss: 1.170
+    count: 0---loss: 1.167
+    count: 5---loss: 1.243
+Validation Score over Epoch 4: 1.357
+    count: 0---loss: 1.072
+    count: 5---loss: 1.096
+    count: 0---loss: 1.150
+    count: 5---loss: 0.967
+    count: 0---loss: 1.255
+    count: 5---loss: 1.032
+    count: 0---loss: 1.025
+    count: 5---loss: 1.115
+    count: 0---loss: 1.120
+    count: 5---loss: 1.171
+Validation Score over Epoch 5: 1.281
+    count: 0---loss: 1.091
+    count: 5---loss: 0.906
+    count: 0---loss: 1.070
+    count: 5---loss: 0.893
+    count: 0---loss: 1.202
+    count: 5---loss: 0.992
+    count: 0---loss: 0.981
+    count: 5---loss: 1.069
+    count: 0---loss: 1.048
+    count: 5---loss: 1.162
+Validation Score over Epoch 6: 1.218
+    count: 0---loss: 0.966
+    count: 5---loss: 0.873
+    count: 0---loss: 0.993
+    count: 5---loss: 0.822
+    count: 0---loss: 1.185
+    count: 5---loss: 1.034
+    count: 0---loss: 0.939
+    count: 5---loss: 0.988
+    count: 0---loss: 0.981
+    count: 5---loss: 1.180
+Validation Score over Epoch 7: 1.149
+    count: 0---loss: 0.901
+    count: 5---loss: 0.900
+    count: 0---loss: 0.926
+    count: 5---loss: 0.757
+    count: 0---loss: 1.083
+    count: 5---loss: 1.122
+    count: 0---loss: 0.877
+    count: 5---loss: 0.944
+    count: 0---loss: 0.941
+    count: 5---loss: 1.141
+Validation Score over Epoch 8: 1.089
+    count: 0---loss: 0.839
+    count: 5---loss: 0.943
+    count: 0---loss: 0.874
+    count: 5---loss: 0.697
+    count: 0---loss: 1.026
+    count: 5---loss: 0.927
+    count: 0---loss: 0.826
+    count: 5---loss: 0.946
+    count: 0---loss: 0.935
+    count: 5---loss: 1.061
+Validation Score over Epoch 9: 1.055
+process ended
+Current epoch: 20.
+Run another 10 epoch?[y/n]
+    count: 0---loss: 0.789
+    count: 5---loss: 0.813
+    count: 0---loss: 0.826
+    count: 5---loss: 1.505
+    count: 0---loss: 1.014
+    count: 5---loss: 1.187
+    count: 0---loss: 0.801
+    count: 5---loss: 1.456
+    count: 0---loss: 0.935
+    count: 5---loss: 1.446
+Validation Score over Epoch 0: 1.189
+    count: 0---loss: 0.930
+    count: 5---loss: 1.200
+    count: 0---loss: 0.920
+    count: 5---loss: 1.253
+    count: 0---loss: 0.944
+    count: 5---loss: 0.962
+    count: 0---loss: 0.979
+    count: 5---loss: 1.322
+    count: 0---loss: 0.862
+    count: 5---loss: 1.187
+Validation Score over Epoch 1: 1.148
+    count: 0---loss: 0.978
+    count: 5---loss: 0.864
+    count: 0---loss: 1.039
+    count: 5---loss: 0.975
+    count: 0---loss: 1.029
+    count: 5---loss: 0.845
+    count: 0---loss: 0.832
+    count: 5---loss: 0.975
+    count: 0---loss: 0.903
+    count: 5---loss: 0.973
+Validation Score over Epoch 2: 1.091
+    count: 0---loss: 0.733
+    count: 5---loss: 0.831
+    count: 0---loss: 0.861
+    count: 5---loss: 0.919
+    count: 0---loss: 0.978
+    count: 5---loss: 0.837
+    count: 0---loss: 0.846
+    count: 5---loss: 1.133
+    count: 0---loss: 0.827
+    count: 5---loss: 0.934
+Validation Score over Epoch 3: 1.076
+    count: 0---loss: 0.716
+    count: 5---loss: 0.811
+    count: 0---loss: 0.945
+    count: 5---loss: 0.730
+    count: 0---loss: 0.924
+    count: 5---loss: 0.818
+    count: 0---loss: 0.808
+    count: 5---loss: 0.819
+    count: 0---loss: 0.840
+    count: 5---loss: 0.970
+Validation Score over Epoch 4: 0.995
+    count: 0---loss: 0.732
+    count: 5---loss: 0.771
+    count: 0---loss: 0.755
+    count: 5---loss: 0.737
+    count: 0---loss: 0.948
+    count: 5---loss: 0.991
+    count: 0---loss: 0.740
+    count: 5---loss: 1.043
+    count: 0---loss: 0.769
+    count: 5---loss: 1.057
+Validation Score over Epoch 5: 0.951
+    count: 0---loss: 0.671
+    count: 5---loss: 0.811
+    count: 0---loss: 0.736
+    count: 5---loss: 0.567
+    count: 0---loss: 0.835
+    count: 5---loss: 0.788
+    count: 0---loss: 0.656
+    count: 5---loss: 0.797
+    count: 0---loss: 0.735
+    count: 5---loss: 0.918
+Validation Score over Epoch 6: 0.886
+    count: 0---loss: 0.629
+    count: 5---loss: 0.814
+    count: 0---loss: 0.615
+    count: 5---loss: 0.546
+    count: 0---loss: 0.783
+    count: 5---loss: 0.748
+    count: 0---loss: 0.613
+    count: 5---loss: 0.899
+    count: 0---loss: 0.700
+    count: 5---loss: 0.872
+Validation Score over Epoch 7: 0.861
+    count: 0---loss: 0.612
+    count: 5---loss: 0.751
+    count: 0---loss: 0.572
+    count: 5---loss: 0.493
+    count: 0---loss: 0.779
+    count: 5---loss: 0.798
+    count: 0---loss: 0.580
+    count: 5---loss: 0.840
+    count: 0---loss: 0.636
+    count: 5---loss: 0.843
+Validation Score over Epoch 8: 0.839
+    count: 0---loss: 0.587
+    count: 5---loss: 0.717
+    count: 0---loss: 0.587
+    count: 5---loss: 0.435
+    count: 0---loss: 0.723
+    count: 5---loss: 0.822
+    count: 0---loss: 0.551
+    count: 5---loss: 0.791
+    count: 0---loss: 0.612
+    count: 5---loss: 0.844
+Validation Score over Epoch 9: 0.778
+process ended
+Current epoch: 30.
+Run another 10 epoch?[y/n]
+    count: 0---loss: 0.558
+    count: 5---loss: 1.243
+    count: 0---loss: 0.512
+    count: 5---loss: 0.766
+    count: 0---loss: 0.663
+    count: 5---loss: 0.747
+    count: 0---loss: 0.534
+    count: 5---loss: 1.077
+    count: 0---loss: 0.583
+    count: 5---loss: 1.642
+Validation Score over Epoch 0: 0.850
+    count: 0---loss: 0.567
+    count: 5---loss: 0.753
+    count: 0---loss: 0.476
+    count: 5---loss: 0.526
+    count: 0---loss: 0.792
+    count: 5---loss: 0.757
+    count: 0---loss: 0.569
+    count: 5---loss: 1.063
+    count: 0---loss: 0.583
+    count: 5---loss: 0.889
+Validation Score over Epoch 1: 0.886
+    count: 0---loss: 0.636
+    count: 5---loss: 0.736
+    count: 0---loss: 0.504
+    count: 5---loss: 0.427
+    count: 0---loss: 0.853
+    count: 5---loss: 1.037
+    count: 0---loss: 0.526
+    count: 5---loss: 0.731
+    count: 0---loss: 0.595
+    count: 5---loss: 0.850
+Validation Score over Epoch 2: 0.792
+    count: 0---loss: 0.573
+    count: 5---loss: 0.685
+    count: 0---loss: 0.463
+    count: 5---loss: 0.377
+    count: 0---loss: 0.673
+    count: 5---loss: 0.687
+    count: 0---loss: 0.536
+    count: 5---loss: 0.927
+    count: 0---loss: 0.719
+    count: 5---loss: 0.806
+Validation Score over Epoch 3: 0.767
+    count: 0---loss: 0.550
+    count: 5---loss: 0.753
+    count: 0---loss: 0.458
+    count: 5---loss: 0.372
+    count: 0---loss: 0.633
+    count: 5---loss: 0.669
+    count: 0---loss: 0.504
+    count: 5---loss: 0.712
+    count: 0---loss: 0.560
+    count: 5---loss: 0.818
+Validation Score over Epoch 4: 0.750
+    count: 0---loss: 0.515
+    count: 5---loss: 0.674
+    count: 0---loss: 0.452
+    count: 5---loss: 0.458
+    count: 0---loss: 0.648
+    count: 5---loss: 0.758
+    count: 0---loss: 0.469
+    count: 5---loss: 0.865
+    count: 0---loss: 0.622
+    count: 5---loss: 0.770
+Validation Score over Epoch 5: 0.704
+    count: 0---loss: 0.497
+    count: 5---loss: 0.642
+    count: 0---loss: 0.422
+    count: 5---loss: 0.472
+    count: 0---loss: 0.585
+    count: 5---loss: 0.649
+    count: 0---loss: 0.440
+    count: 5---loss: 0.741
+    count: 0---loss: 0.508
+    count: 5---loss: 0.806
+Validation Score over Epoch 6: 0.701
+    count: 0---loss: 0.487
+    count: 5---loss: 0.629
+    count: 0---loss: 0.440
+    count: 5---loss: 0.406
+    count: 0---loss: 0.557
+    count: 5---loss: 0.607
+    count: 0---loss: 0.423
+    count: 5---loss: 0.751
+    count: 0---loss: 0.505
+    count: 5---loss: 0.743
+Validation Score over Epoch 7: 0.687
+    count: 0---loss: 0.482
+    count: 5---loss: 0.605
+    count: 0---loss: 0.444
+    count: 5---loss: 0.345
+    count: 0---loss: 0.562
+    count: 5---loss: 0.608
+    count: 0---loss: 0.410
+    count: 5---loss: 0.781
+    count: 0---loss: 0.494
+    count: 5---loss: 0.706
+Validation Score over Epoch 8: 0.682
+    count: 0---loss: 0.486
+    count: 5---loss: 0.591
+    count: 0---loss: 0.416
+    count: 5---loss: 0.321
+    count: 0---loss: 0.556
+    count: 5---loss: 0.646
+    count: 0---loss: 0.398
+    count: 5---loss: 0.692
+    count: 0---loss: 0.449
+    count: 5---loss: 0.699
+Validation Score over Epoch 9: 0.636
+process ended
+Current epoch: 40.
+Run another 10 epoch?[y/n]
+    count: 0---loss: 0.477
+    count: 5---loss: 1.523
+    count: 0---loss: 0.403
+    count: 5---loss: 0.421
+    count: 0---loss: 0.510
+    count: 5---loss: 0.911
+    count: 0---loss: 0.372
+    count: 5---loss: 0.761
+    count: 0---loss: 0.436
+    count: 5---loss: 1.036
+Validation Score over Epoch 0: 0.806
+    count: 0---loss: 0.682
+    count: 5---loss: 1.211
+    count: 0---loss: 0.742
+    count: 5---loss: 0.420
+    count: 0---loss: 0.479
+    count: 5---loss: 0.717
+    count: 0---loss: 0.331
+    count: 5---loss: 0.670
+    count: 0---loss: 0.428
+    count: 5---loss: 0.979
+Validation Score over Epoch 1: 0.729
+    count: 0---loss: 0.663
+    count: 5---loss: 0.863
+    count: 0---loss: 0.418
+    count: 5---loss: 0.329
+    count: 0---loss: 0.532
+    count: 5---loss: 0.607
+    count: 0---loss: 0.466
+    count: 5---loss: 0.810
+    count: 0---loss: 0.544
+    count: 5---loss: 0.867
+Validation Score over Epoch 2: 0.739
+    count: 0---loss: 0.640
+    count: 5---loss: 0.845
+    count: 0---loss: 0.430
+    count: 5---loss: 0.501
+    count: 0---loss: 0.561
+    count: 5---loss: 0.611
+    count: 0---loss: 0.463
+    count: 5---loss: 0.644
+    count: 0---loss: 0.462
+    count: 5---loss: 0.736
+Validation Score over Epoch 3: 0.695
+    count: 0---loss: 0.622
+    count: 5---loss: 0.625
+    count: 0---loss: 0.493
+    count: 5---loss: 0.291
+    count: 0---loss: 0.548
+    count: 5---loss: 0.601
+    count: 0---loss: 0.395
+    count: 5---loss: 0.804
+    count: 0---loss: 0.433
+    count: 5---loss: 0.715
+Validation Score over Epoch 4: 0.679
+    count: 0---loss: 0.548
+    count: 5---loss: 0.661
+    count: 0---loss: 0.427
+    count: 5---loss: 0.298
+    count: 0---loss: 0.543
+    count: 5---loss: 0.533
+    count: 0---loss: 0.363
+    count: 5---loss: 0.644
+    count: 0---loss: 0.420
+    count: 5---loss: 0.676
+Validation Score over Epoch 5: 0.628
+    count: 0---loss: 0.505
+    count: 5---loss: 0.588
+    count: 0---loss: 0.393
+    count: 5---loss: 0.462
+    count: 0---loss: 0.505
+    count: 5---loss: 0.586
+    count: 0---loss: 0.329
+    count: 5---loss: 0.689
+    count: 0---loss: 0.444
+    count: 5---loss: 0.679
+Validation Score over Epoch 6: 0.608
+    count: 0---loss: 0.466
+    count: 5---loss: 0.608
+    count: 0---loss: 0.390
+    count: 5---loss: 0.300
+    count: 0---loss: 0.507
+    count: 5---loss: 0.498
+    count: 0---loss: 0.322
+    count: 5---loss: 0.691
+    count: 0---loss: 0.397
+    count: 5---loss: 0.685
+Validation Score over Epoch 7: 0.609
+    count: 0---loss: 0.458
+    count: 5---loss: 0.565
+    count: 0---loss: 0.404
+    count: 5---loss: 0.277
+    count: 0---loss: 0.481
+    count: 5---loss: 0.503
+    count: 0---loss: 0.323
+    count: 5---loss: 0.628
+    count: 0---loss: 0.445
+    count: 5---loss: 0.628
+Validation Score over Epoch 8: 0.575
+    count: 0---loss: 0.449
+    count: 5---loss: 0.570
+    count: 0---loss: 0.382
+    count: 5---loss: 0.327
+    count: 0---loss: 0.481
+    count: 5---loss: 0.508
+    count: 0---loss: 0.314
+    count: 5---loss: 0.624
+    count: 0---loss: 0.382
+    count: 5---loss: 0.629
+Validation Score over Epoch 9: 0.546
+process ended
+Current epoch: 50.
+Run another 10 epoch?[y/n]y
+    count: 0---loss: 0.441
+    count: 5---loss: 0.631
+    count: 0---loss: 0.349
+    count: 5---loss: 0.403
+    count: 0---loss: 0.472
+    count: 5---loss: 0.890
+    count: 0---loss: 0.312
+    count: 5---loss: 0.770
+    count: 0---loss: 0.390
+    count: 5---loss: 1.538
+Validation Score over Epoch 0: 0.648
+    count: 0---loss: 0.535
+    count: 5---loss: 0.821
+    count: 0---loss: 0.362
+    count: 5---loss: 0.297
+    count: 0---loss: 0.427
+    count: 5---loss: 0.591
+    count: 0---loss: 0.285
+    count: 5---loss: 0.724
+    count: 0---loss: 0.676
+    count: 5---loss: 1.203
+Validation Score over Epoch 1: 0.672
+    count: 0---loss: 0.664
+    count: 5---loss: 0.627
+    count: 0---loss: 0.532
+    count: 5---loss: 0.450
+    count: 0---loss: 0.535
+    count: 5---loss: 0.522
+    count: 0---loss: 0.308
+    count: 5---loss: 0.605
+    count: 0---loss: 0.511
+    count: 5---loss: 0.978
+Validation Score over Epoch 2: 0.678
+    count: 0---loss: 0.479
+    count: 5---loss: 0.575
+    count: 0---loss: 0.541
+    count: 5---loss: 0.295
+    count: 0---loss: 0.541
+    count: 5---loss: 0.517
+    count: 0---loss: 0.313
+    count: 5---loss: 0.620
+    count: 0---loss: 0.610
+    count: 5---loss: 0.760
+Validation Score over Epoch 3: 0.582
+    count: 0---loss: 0.435
+    count: 5---loss: 0.525
+    count: 0---loss: 0.409
+    count: 5---loss: 0.390
+    count: 0---loss: 0.516
+    count: 5---loss: 0.463
+    count: 0---loss: 0.315
+    count: 5---loss: 0.616
+    count: 0---loss: 0.422
+    count: 5---loss: 0.736
+Validation Score over Epoch 4: 0.587
+    count: 0---loss: 0.445
+    count: 5---loss: 0.495
+    count: 0---loss: 0.367
+    count: 5---loss: 0.284
+    count: 0---loss: 0.476
+    count: 5---loss: 0.499
+    count: 0---loss: 0.306
+    count: 5---loss: 0.570
+    count: 0---loss: 0.480
+    count: 5---loss: 0.624
+Validation Score over Epoch 5: 0.539
+    count: 0---loss: 0.444
+    count: 5---loss: 0.513
+    count: 0---loss: 0.339
+    count: 5---loss: 0.281
+    count: 0---loss: 0.463
+    count: 5---loss: 0.427
+    count: 0---loss: 0.303
+    count: 5---loss: 0.623
+    count: 0---loss: 0.370
+    count: 5---loss: 0.660
+Validation Score over Epoch 6: 0.539
+    count: 0---loss: 0.398
+    count: 5---loss: 0.485
+    count: 0---loss: 0.349
+    count: 5---loss: 0.317
+    count: 0---loss: 0.448
+    count: 5---loss: 0.445
+    count: 0---loss: 0.297
+    count: 5---loss: 0.539
+    count: 0---loss: 0.397
+    count: 5---loss: 0.576
+Validation Score over Epoch 7: 0.517
+    count: 0---loss: 0.414
+    count: 5---loss: 0.427
+    count: 0---loss: 0.336
+    count: 5---loss: 0.272
+    count: 0---loss: 0.443
+    count: 5---loss: 0.429
+    count: 0---loss: 0.291
+    count: 5---loss: 0.573
+    count: 0---loss: 0.372
+    count: 5---loss: 0.555
+Validation Score over Epoch 8: 0.498
+    count: 0---loss: 0.407
+    count: 5---loss: 0.409
+    count: 0---loss: 0.324
+    count: 5---loss: 0.268
+    count: 0---loss: 0.430
+    count: 5---loss: 0.376
+    count: 0---loss: 0.278
+    count: 5---loss: 0.539
+    count: 0---loss: 0.355
+    count: 5---loss: 0.545
+Validation Score over Epoch 9: 0.491
+process ended
+Current epoch: 60.
+Run another 10 epoch?[y/n]y
+    count: 0---loss: 0.395
+    count: 5---loss: 0.794
+    count: 0---loss: 0.327
+    count: 5---loss: 0.309
+    count: 0---loss: 0.428
+    count: 5---loss: 0.732
+    count: 0---loss: 0.271
+    count: 5---loss: 0.632
+    count: 0---loss: 0.395
+    count: 5---loss: 1.396
+Validation Score over Epoch 0: 0.637
+    count: 0---loss: 0.382
+    count: 5---loss: 0.523
+    count: 0---loss: 0.525
+    count: 5---loss: 0.348
+    count: 0---loss: 0.399
+    count: 5---loss: 0.504
+    count: 0---loss: 0.369
+    count: 5---loss: 0.535
+    count: 0---loss: 0.706
+    count: 5---loss: 0.986
+Validation Score over Epoch 1: 0.570
+    count: 0---loss: 0.377
+    count: 5---loss: 0.502
+    count: 0---loss: 0.403
+    count: 5---loss: 0.310
+    count: 0---loss: 0.447
+    count: 5---loss: 0.403
+    count: 0---loss: 0.339
+    count: 5---loss: 0.719
+    count: 0---loss: 0.438
+    count: 5---loss: 0.812
+Validation Score over Epoch 2: 0.551
+    count: 0---loss: 0.386
+    count: 5---loss: 0.543
+    count: 0---loss: 0.328
+    count: 5---loss: 0.375
+    count: 0---loss: 0.418
+    count: 5---loss: 0.373
+    count: 0---loss: 0.331
+    count: 5---loss: 0.479
+    count: 0---loss: 0.517
+    count: 5---loss: 0.635
+Validation Score over Epoch 3: 0.540
+    count: 0---loss: 0.396
+    count: 5---loss: 0.448
+    count: 0---loss: 0.391
+    count: 5---loss: 0.252
+    count: 0---loss: 0.431
+    count: 5---loss: 0.351
+    count: 0---loss: 0.266
+    count: 5---loss: 0.515
+    count: 0---loss: 0.375
+    count: 5---loss: 0.618
+Validation Score over Epoch 4: 0.514
+    count: 0---loss: 0.386
+    count: 5---loss: 0.460
+    count: 0---loss: 0.381
+    count: 5---loss: 0.275
+    count: 0---loss: 0.454
+    count: 5---loss: 0.398
+    count: 0---loss: 0.271
+    count: 5---loss: 0.532
+    count: 0---loss: 0.428
+    count: 5---loss: 0.536
+Validation Score over Epoch 5: 0.501
+    count: 0---loss: 0.371
+    count: 5---loss: 0.405
+    count: 0---loss: 0.313
+    count: 5---loss: 0.377
+    count: 0---loss: 0.372
+    count: 5---loss: 0.439
+    count: 0---loss: 0.269
+    count: 5---loss: 0.428
+    count: 0---loss: 0.346
+    count: 5---loss: 0.554
+Validation Score over Epoch 6: 0.480
+    count: 0---loss: 0.379
+    count: 5---loss: 0.397
+    count: 0---loss: 0.314
+    count: 5---loss: 0.243
+    count: 0---loss: 0.369
+    count: 5---loss: 0.337
+    count: 0---loss: 0.254
+    count: 5---loss: 0.412
+    count: 0---loss: 0.371
+    count: 5---loss: 0.470
+Validation Score over Epoch 7: 0.469
+    count: 0---loss: 0.381
+    count: 5---loss: 0.406
+    count: 0---loss: 0.322
+    count: 5---loss: 0.239
+    count: 0---loss: 0.410
+    count: 5---loss: 0.288
+    count: 0---loss: 0.279
+    count: 5---loss: 0.451
+    count: 0---loss: 0.358
+    count: 5---loss: 0.449
+Validation Score over Epoch 8: 0.459
+    count: 0---loss: 0.362
+    count: 5---loss: 0.365
+    count: 0---loss: 0.327
+    count: 5---loss: 0.315
+    count: 0---loss: 0.375
+    count: 5---loss: 0.274
+    count: 0---loss: 0.245
+    count: 5---loss: 0.456
+    count: 0---loss: 0.329
+    count: 5---loss: 0.457
+Validation Score over Epoch 9: 0.453
+process ended
+Current epoch: 70.
+Run another 10 epoch?[y/n]y
+    count: 0---loss: 0.362
+    count: 5---loss: 0.575
+    count: 0---loss: 0.267
+    count: 5---loss: 0.491
+    count: 0---loss: 0.355
+    count: 5---loss: 0.317
+    count: 0---loss: 0.240
+    count: 5---loss: 0.497
+    count: 0---loss: 0.371
+    count: 5---loss: 1.264
+Validation Score over Epoch 0: 0.624
+    count: 0---loss: 0.545
+    count: 5---loss: 0.397
+    count: 0---loss: 0.353
+    count: 5---loss: 0.291
+    count: 0---loss: 0.503
+    count: 5---loss: 0.404
+    count: 0---loss: 0.412
+    count: 5---loss: 0.437
+    count: 0---loss: 0.668
+    count: 5---loss: 0.801
+Validation Score over Epoch 1: 0.568
+    count: 0---loss: 0.352
+    count: 5---loss: 0.405
+    count: 0---loss: 0.264
+    count: 5---loss: 0.326
+    count: 0---loss: 0.581
+    count: 5---loss: 0.461
+    count: 0---loss: 0.291
+    count: 5---loss: 0.560
+    count: 0---loss: 0.390
+    count: 5---loss: 0.719
+Validation Score over Epoch 2: 0.486
+    count: 0---loss: 0.363
+    count: 5---loss: 0.446
+    count: 0---loss: 0.262
+    count: 5---loss: 0.243
+    count: 0---loss: 0.344
+    count: 5---loss: 0.326
+    count: 0---loss: 0.289
+    count: 5---loss: 0.392
+    count: 0---loss: 0.491
+    count: 5---loss: 0.544
+Validation Score over Epoch 3: 0.472
+    count: 0---loss: 0.343
+    count: 5---loss: 0.401
+    count: 0---loss: 0.320
+    count: 5---loss: 0.257
+    count: 0---loss: 0.328
+    count: 5---loss: 0.316
+    count: 0---loss: 0.249
+    count: 5---loss: 0.420
+    count: 0---loss: 0.349
+    count: 5---loss: 0.540
+Validation Score over Epoch 4: 0.456
+    count: 0---loss: 0.344
+    count: 5---loss: 0.332
+    count: 0---loss: 0.268
+    count: 5---loss: 0.262
+    count: 0---loss: 0.394
+    count: 5---loss: 0.358
+    count: 0---loss: 0.246
+    count: 5---loss: 0.439
+    count: 0---loss: 0.410
+    count: 5---loss: 0.447
+Validation Score over Epoch 5: 0.459
+    count: 0---loss: 0.343
+    count: 5---loss: 0.305
+    count: 0---loss: 0.274
+    count: 5---loss: 0.249
+    count: 0---loss: 0.344
+    count: 5---loss: 0.266
+    count: 0---loss: 0.244
+    count: 5---loss: 0.343
+    count: 0---loss: 0.318
+    count: 5---loss: 0.468
+Validation Score over Epoch 6: 0.435
+    count: 0---loss: 0.320
+    count: 5---loss: 0.298
+    count: 0---loss: 0.282
+    count: 5---loss: 0.283
+    count: 0---loss: 0.326
+    count: 5---loss: 0.260
+    count: 0---loss: 0.227
+    count: 5---loss: 0.334
+    count: 0---loss: 0.343
+    count: 5---loss: 0.388
+Validation Score over Epoch 7: 0.436
+    count: 0---loss: 0.313
+    count: 5---loss: 0.302
+    count: 0---loss: 0.248
+    count: 5---loss: 0.287
+    count: 0---loss: 0.346
+    count: 5---loss: 0.273
+    count: 0---loss: 0.247
+    count: 5---loss: 0.377
+    count: 0---loss: 0.324
+    count: 5---loss: 0.380
+Validation Score over Epoch 8: 0.443
+    count: 0---loss: 0.309
+    count: 5---loss: 0.286
+    count: 0---loss: 0.245
+    count: 5---loss: 0.275
+    count: 0---loss: 0.313
+    count: 5---loss: 0.272
+    count: 0---loss: 0.218
+    count: 5---loss: 0.378
+    count: 0---loss: 0.300
+    count: 5---loss: 0.390
+Validation Score over Epoch 9: 0.439
+process ended
+Current epoch: 80.
+Run another 10 epoch?[y/n]n
